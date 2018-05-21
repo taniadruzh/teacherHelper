@@ -19,3 +19,23 @@ select name from student where phone like('+38050%') or phone like('+38066%') or
 select * from student
 where ser_name in(
 select ser_name from student group by ser_name having count(*) > 1);
+
+
+SELECT count(*) FROM student;
+
+SELECT * from student;
+
+SELECT * from student WHERE email LIKE ('%gmail.com');
+
+create table adres
+(
+  city VARCHAR(25) not null,
+  street VARCHAR(25) not null,
+  number int not null)
+;
+
+INSERT INTO adres (city, street, number) VALUES ('dnepr', 'kirova', '5');
+INSERT INTO adres (city, street, number) VALUES ('dnepr', 'kirova', '43');
+INSERT INTO adres (city, street, number) VALUES ('kiyv', 'kirova', '5');
+
+SELECT * from adres;
