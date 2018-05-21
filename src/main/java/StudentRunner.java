@@ -1,10 +1,6 @@
 
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.ArrayList;
 
 public class StudentRunner {
@@ -20,12 +16,39 @@ public class StudentRunner {
     private static ResultSet rs;
 
     public static void main(String args[]) {
-        getStudentsFromDB();
+       // getStudentsFromDB();
         setStudentsToDB();
     }
 
     private static void setStudentsToDB() {
-        
+
+        try {
+            // opening database connection to MySQL server
+            con = DriverManager.getConnection(url, user, password);
+
+            String query = " insert into student (name, ser_name, phone, email)"  + " values (?, ?, ?, ?)";
+
+            for (int i = 0; i<30;i++) {
+                // create the mysql insert preparedstatement
+                PreparedStatement preparedStmt = con.prepareStatement(query);
+                preparedStmt.setString(1, "name_" + i);
+                preparedStmt.setString(2, "ser_name_" + i);
+                preparedStmt.setString(3, String.valueOf(i * 111111));
+                preparedStmt.setString(4, "asd" + i + "@gmail.com");
+
+                // execute the preparedstatement
+                preparedStmt.execute();
+            }
+
+        } catch (SQLException sqlEx) {
+            sqlEx.printStackTrace();
+        } finally {
+            //close connection ,stmt and resultset here
+            try { con.close(); } catch(SQLException se) { /*can't do anything */ }
+            try { stmt.close(); } catch(SQLException se) { /*can't do anything */ }
+            try { rs.close(); } catch(SQLException se) { /*can't do anything */ }
+        }
+
     }
 
     public static void getStudentsFromDB(){
