@@ -20,6 +20,15 @@ public class StudentRunner {
     private static ResultSet rs;
 
     public static void main(String args[]) {
+        getStudentsFromDB();
+        setStudentsToDB();
+    }
+
+    private static void setStudentsToDB() {
+        
+    }
+
+    public static void getStudentsFromDB(){
         String query = "select idstudent, name from student";
 
         try {
