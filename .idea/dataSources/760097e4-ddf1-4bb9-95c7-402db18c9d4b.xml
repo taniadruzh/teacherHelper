@@ -28,7 +28,10 @@
     </role>
     <schema id="6" parent="2" name="public">
       <ObjectId>2200</ObjectId>
+      <IntrospectionTimestamp>2018-05-21.21:36:24.715</IntrospectionTimestamp>
+      <IntrospectionStateNumber>551</IntrospectionStateNumber>
       <Current>1</Current>
+      <Visible>1</Visible>
     </schema>
     <schema id="7" parent="2" name="pg_catalog">
       <ObjectId>11</ObjectId>
@@ -45,5 +48,102 @@
     <schema id="11" parent="2" name="information_schema">
       <ObjectId>12113</ObjectId>
     </schema>
+    <table id="12" parent="6" name="journal">
+      <ObjectId>16408</ObjectId>
+      <StateNumber>550</StateNumber>
+    </table>
+    <table id="13" parent="6" name="srudent">
+      <ObjectId>16394</ObjectId>
+      <StateNumber>550</StateNumber>
+    </table>
+    <column id="14" parent="12" name="id">
+      <Position>1</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>550</StateNumber>
+    </column>
+    <column id="15" parent="12" name="idstudent">
+      <Position>2</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>550</StateNumber>
+    </column>
+    <column id="16" parent="12" name="data">
+      <Position>3</Position>
+      <DataType>varchar(25)|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>550</StateNumber>
+    </column>
+    <index id="17" parent="12" name="journal_id_uindex">
+      <ObjectId>16418</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="18" parent="12" name="journal_pkey">
+      <ObjectId>16411</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="19" parent="12" name="journal_pkey">
+      <ObjectId>16412</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>journal_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="20" parent="12" name="journal_srudent_idstudent_fk">
+      <ObjectId>16413</ObjectId>
+      <ColNames>idstudent</ColNames>
+      <RefTableId>16394</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>srudent</RefTableName>
+      <RefKeyName>srudent_pkey</RefKeyName>
+      <RefColNames>idstudent</RefColNames>
+    </foreign-key>
+    <column id="21" parent="13" name="idstudent">
+      <Position>1</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>545</StateNumber>
+    </column>
+    <column id="22" parent="13" name="name">
+      <Position>2</Position>
+      <DataType>varchar(25)|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>545</StateNumber>
+    </column>
+    <column id="23" parent="13" name="ser_name">
+      <Position>3</Position>
+      <DataType>varchar(25)|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>545</StateNumber>
+    </column>
+    <column id="24" parent="13" name="phone">
+      <Position>4</Position>
+      <DataType>varchar(25)|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>545</StateNumber>
+    </column>
+    <column id="25" parent="13" name="email">
+      <Position>5</Position>
+      <DataType>varchar(25)|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>545</StateNumber>
+    </column>
+    <index id="26" parent="13" name="srudent_idstudent_uindex">
+      <ObjectId>16399</ObjectId>
+      <ColNames>idstudent</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="27" parent="13" name="srudent_pkey">
+      <ObjectId>16397</ObjectId>
+      <ColNames>idstudent</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="28" parent="13" name="srudent_pkey">
+      <ObjectId>16398</ObjectId>
+      <ColNames>idstudent</ColNames>
+      <UnderlyingIndexName>srudent_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
   </database-model>
 </dataSource>
