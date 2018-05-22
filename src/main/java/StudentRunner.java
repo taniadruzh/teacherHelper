@@ -3,7 +3,7 @@
 import java.sql.*;
 import java.util.ArrayList;
 
-public class StudentRunner implements Runner{
+public class StudentRunner implements RunnerStud{
 
     // JDBC URL, username and password of MySQL server
     private static final String url = "jdbc:mysql://localhost:3306/teacher_helper";
@@ -15,48 +15,8 @@ public class StudentRunner implements Runner{
     private static Statement stmt;
     private static ResultSet rs;
 
-    public static void main(String args[]) {
-
-        ArrayList<Student> students = new ArrayList<>();
-        for (int i = 0; i<30;i++) {
-            students.add(new Student(i,"Ivanov_"+i));
-        }
-       // getStudentsFromDB();
-        write(students);
-    }
-
-    private static void add(ArrayList<Student> students) {
-
-        try {
-            // opening database connection to MySQL server
-            con = DriverManager.getConnection(url, user, password);
-
-            String query = " insert into student (name, ser_name, phone, email)"  + " values (?, ?, ?, ?)";
-
-            for (int i = 0; i<students.size();i++) {
-                // create the mysql insert preparedstatement
-                PreparedStatement preparedStmt = con.prepareStatement(query);
-                preparedStmt.setString(1, students.get(i).getStudentName());
-                preparedStmt.setString(2, "ser_name_" + i);
-                preparedStmt.setString(3, String.valueOf(i * 111111));
-                preparedStmt.setString(4, "asd" + i + "@gmail.com");
-
-                // execute the preparedstatement
-                preparedStmt.execute();
-            }
-
-        } catch (SQLException sqlEx) {
-            sqlEx.printStackTrace();
-        } finally {
-            //close connection ,stmt and resultset here
-            try { con.close(); } catch(SQLException se) { /*can't do anything */ }
-            try { stmt.close(); } catch(SQLException se) { /*can't do anything */ }
-            try { rs.close(); } catch(SQLException se) { /*can't do anything */ }
-        }
-
-    }
-
-    public static void getStudentsFromDB(){
+    @Override
+    public ArrayList read() {
         String query = "select idstudent, name from student";
 
         try {
@@ -75,6 +35,7 @@ public class StudentRunner implements Runner{
                 students.add(new Student(id, name));
                 System.out.println(id +" "+name);
             }
+            return students;
 
         } catch (SQLException sqlEx) {
             sqlEx.printStackTrace();
@@ -83,16 +44,13 @@ public class StudentRunner implements Runner{
             try { con.close(); } catch(SQLException se) { /*can't do anything */ }
             try { stmt.close(); } catch(SQLException se) { /*can't do anything */ }
             try { rs.close(); } catch(SQLException se) { /*can't do anything */ }
+            return null;
         }
+
     }
 
     @Override
-    public ArrayList read() {
-        return null;
-    }
-
-    @Override
-    public void write(ArrayList students) {
+    public void write(ArrayList<Student> students) {
         try {
             // opening database connection to MySQL server
             con = DriverManager.getConnection(url, user, password);
