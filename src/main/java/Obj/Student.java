@@ -8,6 +8,9 @@ import lombok.NoArgsConstructor;
 public class Student {
     private int idStudent;
     private String studentName;
+    private String serName;
+    private String phone;
+    private String email;
 
 
     public Student(int idStudent, String studentName) {
