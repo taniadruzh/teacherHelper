@@ -1,0 +1,23 @@
+create TABLE student (
+    name varchar(25) not null,
+    sec_name varchar(25) not null,
+    phone varchar(25) not null,
+    email varchar(25) not null
+);
+CREATE UNIQUE INDEX student_phone_uindex ON student (phone);
+CREATE UNIQUE INDEX student_email_uindex ON student (email);
+
+create TABLE journal (
+    idjournal int(11) not null,
+    stud_id int(11) not null,
+    data datetime,
+    PRIMARY KEY (idjournal)
+);
+CREATE UNIQUE INDEX idjournal_UNIQUE ON journal (idjournal ASC);
+
+create TABLE adres (
+    city varchar(25) not null,
+    street varchar(25) not null,
+    number int(11) not null
+);
+

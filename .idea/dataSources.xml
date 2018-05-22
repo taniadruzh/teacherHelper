@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
+  <component name="DataSourceManagerImpl" format="xml" hash="1264262311">
     <data-source source="LOCAL" name="@localhost" uuid="760097e4-ddf1-4bb9-95c7-402db18c9d4b">
       <driver-ref>postgresql</driver-ref>
       <synchronize>true</synchronize>
@@ -14,7 +14,7 @@
       <driver-ref>mysql</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mysql://localhost:3306/teacher_helper</jdbc-url>
+      <jdbc-url>jdbc:mysql://localhost:3306/teacher_help</jdbc-url>
       <driver-properties>
         <property name="autoReconnect" value="true" />
         <property name="zeroDateTimeBehavior" value="convertToNull" />

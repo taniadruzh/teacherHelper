@@ -3,7 +3,7 @@
 import java.sql.*;
 import java.util.ArrayList;
 
-public class StudentRunner {
+public class StudentRunner implements Runner{
 
     // JDBC URL, username and password of MySQL server
     private static final String url = "jdbc:mysql://localhost:3306/teacher_helper";
