@@ -1,3 +1,7 @@
+package Impl;
+
+import Obj.Student;
+
 import java.util.ArrayList;
 
 public interface RunnerStud {

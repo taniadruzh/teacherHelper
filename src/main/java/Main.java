@@ -1,3 +1,6 @@
+import Obj.Student;
+import Runners.StudentRunnerDB;
+
 import java.util.ArrayList;
 
 
@@ -8,7 +11,7 @@ public class Main {
             students.add(new Student(i,"Ivanov_"+i));
         }
         // getStudentsFromDB();
-        StudentRunner st = new StudentRunner();
+        StudentRunnerDB st = new StudentRunnerDB();
         st.write(students);
 
         students = st.read();

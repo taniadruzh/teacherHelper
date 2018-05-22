@@ -1,9 +1,12 @@
+package Runners;
 
+import Impl.RunnerStud;
+import Obj.Student;
 
 import java.sql.*;
 import java.util.ArrayList;
 
-public class StudentRunner implements RunnerStud{
+public class StudentRunnerDB implements RunnerStud {
 
     // JDBC URL, username and password of MySQL server
     private static final String url = "jdbc:mysql://localhost:3306/teacher_helper";
