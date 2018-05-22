@@ -6,5 +6,5 @@ import java.util.ArrayList;
 public interface Runner {
     public ArrayList read();
     public void write(ArrayList arrayList);
-    public void add(Object object);
+    //public void add(Object object);
 }

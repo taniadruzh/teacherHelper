@@ -16,11 +16,16 @@ public class StudentRunner implements Runner{
     private static ResultSet rs;
 
     public static void main(String args[]) {
+
+        ArrayList<Student> students = new ArrayList<>();
+        for (int i = 0; i<30;i++) {
+            students.add(new Student(i,"Ivanov_"+i));
+        }
        // getStudentsFromDB();
-        setStudentsToDB();
+        write(students);
     }
 
-    private static void setStudentsToDB() {
+    private static void add(ArrayList<Student> students) {
 
         try {
             // opening database connection to MySQL server
@@ -28,10 +33,10 @@ public class StudentRunner implements Runner{
 
             String query = " insert into student (name, ser_name, phone, email)"  + " values (?, ?, ?, ?)";
 
-            for (int i = 0; i<30;i++) {
+            for (int i = 0; i<students.size();i++) {
                 // create the mysql insert preparedstatement
                 PreparedStatement preparedStmt = con.prepareStatement(query);
-                preparedStmt.setString(1, "name_" + i);
+                preparedStmt.setString(1, students.get(i).getStudentName());
                 preparedStmt.setString(2, "ser_name_" + i);
                 preparedStmt.setString(3, String.valueOf(i * 111111));
                 preparedStmt.setString(4, "asd" + i + "@gmail.com");
@@ -81,4 +86,39 @@ public class StudentRunner implements Runner{
         }
     }
 
+    @Override
+    public ArrayList read() {
+        return null;
+    }
+
+    @Override
+    public void write(ArrayList students) {
+        try {
+            // opening database connection to MySQL server
+            con = DriverManager.getConnection(url, user, password);
+
+            String query = " insert into student (name, ser_name, phone, email)"  + " values (?, ?, ?, ?)";
+
+            for (int i = 0; i<students.size();i++) {
+                // create the mysql insert preparedstatement
+                PreparedStatement preparedStmt = con.prepareStatement(query);
+                preparedStmt.setString(1, students.get(i).getStudentName());
+                preparedStmt.setString(2, "ser_name_" + i);
+                preparedStmt.setString(3, String.valueOf(i * 111111));
+                preparedStmt.setString(4, "asd" + i + "@gmail.com");
+
+                // execute the preparedstatement
+                preparedStmt.execute();
+            }
+
+        } catch (SQLException sqlEx) {
+            sqlEx.printStackTrace();
+        } finally {
+            //close connection ,stmt and resultset here
+            try { con.close(); } catch(SQLException se) { /*can't do anything */ }
+            try { stmt.close(); } catch(SQLException se) { /*can't do anything */ }
+            try { rs.close(); } catch(SQLException se) { /*can't do anything */ }
+        }
+
+    }
 }
