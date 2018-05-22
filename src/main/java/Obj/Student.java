@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
+@AllArgsConstructor
 public class Student {
     private int idStudent;
     private String studentName;
@@ -16,5 +17,12 @@ public class Student {
     public Student(int idStudent, String studentName) {
         this.idStudent = idStudent;
         this.studentName = studentName;
+    }
+
+    public Student(String studentName, String serName, String phone, String email) {
+        this.studentName = studentName;
+        this.serName = serName;
+        this.phone = phone;
+        this.email = email;
     }
 }

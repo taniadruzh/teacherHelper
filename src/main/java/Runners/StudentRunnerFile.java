@@ -19,7 +19,7 @@ public class StudentRunnerFile implements RunnerStud {
     public void write(ArrayList<Student> students) {
         try (BufferedWriter bw = new BufferedWriter(new FileWriter(FILENAME,true))) {
             for (Student student : students) {
-                bw.write(INSERT_SCRIPT +"('" +student.getName() + "', '" + student.getSerName() + "', '" + student.getPhone()+"', '"+student.getEmail()+"');");
+                bw.write(INSERT_SCRIPT +"('" +student.getStudentName() + "', '" + student.getSerName() + "', '" + student.getPhone()+"', '"+student.getEmail()+"');");
                 bw.newLine();
 
             }
