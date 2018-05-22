@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="788cc35f-b843-46fc-be3e-060d7d3a9c0b" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/Runners/StudentRunnerFile.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Main.java" afterPath="$PROJECT_DIR$/src/main/java/Main.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/Journal.java" afterPath="$PROJECT_DIR$/src/main/java/Obj/Journal.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/RunnerStud.java" afterPath="$PROJECT_DIR$/src/main/java/Impl/RunnerStud.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/Student.java" afterPath="$PROJECT_DIR$/src/main/java/Obj/Student.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/StudentRunner.java" afterPath="$PROJECT_DIR$/src/main/java/Runners/StudentRunnerDB.java" />
     </list>
     <ignored path=".idea/dataSources.local.xml" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -853,7 +847,7 @@
       <created>1527002734609</created>
       <option name="number" value="Default" />
       <updated>1527002734609</updated>
-      <workItem from="1527002735884" duration="4475000" />
+      <workItem from="1527002735884" duration="4772000" />
     </task>
     <task id="LOCAL-00001" summary="interf">
       <created>1527005595408</created>
@@ -873,11 +867,17 @@
       <option name="project" value="LOCAL" />
       <updated>1527007328405</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="files">
+      <created>1527007480200</created>
+      <option name="number" value="00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1527007480200</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4475000" />
+    <option name="totallyTimeSpent" value="4772000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1366" height="728" extended-state="0" />
@@ -915,7 +915,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="interf" />
     <MESSAGE value="sql" />
-    <option name="LAST_COMMIT_MESSAGE" value="sql" />
+    <MESSAGE value="files" />
+    <option name="LAST_COMMIT_MESSAGE" value="files" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
